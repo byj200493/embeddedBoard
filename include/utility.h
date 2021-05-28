@@ -4,10 +4,6 @@
 #endif // UTILITY_H
 #include "opencv/cv.h"
 #include "opencv2/opencv.hpp"
-#include <pcl/gpu/kinfu/kinfu.h>
-#include <pcl/gpu/kinfu/raycaster.h>
-#include <pcl/gpu/kinfu/marching_cubes.h>
-#include <pcl/gpu/containers/initialization.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/visualization/pcl_visualizer.h>
@@ -29,8 +25,6 @@ void fromDatasetToPointCloud(std::string &root, float maxDepth, float minDepth, 
 void scalingPointCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_ptr, float s);
 Eigen::Vector3f getCenterOfPointCloud(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_ptr, pcl::PointXYZ &center);
 void extractColors(pcl::PointCloud<pcl::PointXYZRGB>::Ptr cloud_ptr, std::vector<Eigen::Vector3f> &colors);
-boost::shared_ptr<pcl::PolygonMesh> convertToMesh(const pcl::gpu::DeviceArray<pcl::PointXYZ>& triangles);
-boost::shared_ptr<pcl::PolygonMesh> convertToMesh(const pcl::gpu::DeviceArray<pcl::PointXYZ>& triangles, std::vector<Eigen::Hyperplane<float, 3>> &clipPlanes);
 void decimateMesh(pcl::PolygonMesh& mesh_in, pcl::PolygonMesh& out_mesh);
 void writePolygonMeshFile (const pcl::PolygonMesh& mesh, std::string &meshFileName);
 void getDataPaths(std::string &root, std::vector<std::string> &depthPaths, std::vector<std::string> &colorPaths, std::vector<std::string> &backPaths, std::vector<std::string> &calibPaths);

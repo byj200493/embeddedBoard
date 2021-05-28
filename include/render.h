@@ -2,9 +2,7 @@
 #define RENDER_H
 #include "GL/freeglut.h"
 #include "GL/gl.h"
-#include "utility.h"
-#include <pcl/common/transforms.h>
-Eigen::Vector3f angleBetweenTwoVectors(Eigen::Vector3f &vec1, Eigen::Vector3f &vec2);
+
 void rotatingVertices(std::vector<Eigen::Vector3f> &vertices, float rotX, float rotY, float rotZ);
 GLuint setTexture(std::vector<unsigned char> &texels, int width, int height);
 GLuint setViewToTexture(cv::Mat &colorMat);
