@@ -49,11 +49,11 @@ if(USE_TENSORRT)
   #cuda_add_library(myplugins SHARED ${PROJECT_SOURCE_DIR}/src/tensorrt_yolov4/yololayer.cu ${PROJECT_SOURCE_DIR}/src/tensorrt_yolov4/mish.cu)
   #include_directories(./include/tensorrt_yolov4)
 
-  add_executable(three_camControl main.cpp src/camControl.cpp src/render.cpp)
+  add_executable(three_camControl main.cpp src/camControl.cpp src/render.cpp src/utility.cpp)
 
 else()
 
-  add_executable(three_camControl main.cpp src/camControl.cpp src/render.cpp)
+  add_executable(three_camControl main.cpp src/camControl.cpp src/render.cpp src/utility.cpp)
 
 endif(USE_TENSORRT)
 
